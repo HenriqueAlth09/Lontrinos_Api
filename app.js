@@ -3,8 +3,10 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
 app.use(cors({ origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "frontend")));
 
 app.get("/__health", (_req, res) => {
     res.status(200).json({
@@ -106,6 +108,5 @@ app.use((req, res) => {
         dica: "Confira se iniciou o backend da pasta Lontrinos/backend. Teste GET /__health."
     });
 });
-
 
 module.exports = app;
