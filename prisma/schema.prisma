@@ -1,0 +1,146 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Usuario {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  apelido   String? @unique
+  livroFavorito String?
+  lendoAtualmente String?
+  generosFavoritos String?
+  apelidoAlteradoEm DateTime?
+  nomeAlteradoEm DateTime?
+  cpf       String  @unique
+  email     String  @unique
+  senha     String
+  foto      String? @db.LongText
+  bio       String?
+  assinante Boolean @default(false)
+
+  resenhas    Resenha[]
+  mensagens   Mensagem[]
+  pedidos     Pedido[]
+  assinaturas Assinatura[]
+}
+
+model Livro {
+  id      Int    @id @default(autoincrement())
+  titulo  String
+  autor   String
+  genero  String
+  sinopse String
+  capa    String
+  paginas Int?
+  ano     Int?
+
+  resenhas Resenha[]
+  salas    SalaChat[]
+}
+
+model Resenha {
+  id      Int      @id @default(autoincrement())
+  titulo  String
+  texto   String
+  nota    Int
+  spoiler Boolean  @default(false)
+  data    DateTime @default(now())
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  livro   Livro @relation(fields: [livroId], references: [id])
+  livroId Int
+}
+
+model SalaChat {
+  id      Int      @id @default(autoincrement())
+  nome    String
+  tipo    TipoSala
+  genero  String?
+  criada  DateTime @default(now())
+
+  livro   Livro? @relation(fields: [livroId], references: [id])
+  livroId Int?
+
+  mensagens Mensagem[]
+
+  @@index([tipo])
+  @@index([genero])
+}
+
+enum TipoSala {
+  GENERO
+  CLUBE
+}
+
+model Mensagem {
+  id    Int      @id @default(autoincrement())
+  texto String
+  data  DateTime @default(now())
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  sala   SalaChat? @relation(fields: [salaId], references: [id])
+  salaId Int?
+
+  @@index([salaId, data])
+}
+
+model Produto {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  categoria String
+  descricao String
+  preco     Float
+  estoque   Int
+  imagem    String
+  pedidos   Pedido[]
+}
+
+model Pedido {
+  id         Int      @id @default(autoincrement())
+  quantidade Int
+  valorTotal Float
+  data       DateTime @default(now())
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  produto   Produto @relation(fields: [produtoId], references: [id])
+  produtoId Int
+}
+
+model Plano {
+  id          Int          @id @default(autoincrement())
+  nome        String
+  preco       Float
+  duracao     Int
+  beneficios  String
+  assinaturas Assinatura[]
+}
+
+model Assinatura {
+  id     Int      @id @default(autoincrement())
+  inicio DateTime @default(now())
+  fim    DateTime
+
+  usuario   Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  plano   Plano @relation(fields: [planoId], references: [id])
+  planoId Int
+}
+
+model Enquete {
+  id       Int      @id @default(autoincrement())
+  pergunta String
+  opcoes   Json
+  resposta String?
+}

@@ -1,0 +1,10 @@
+const router = require("express").Router();
+const admin = require("../controllers/admin.controller");
+const validarAdmin = require("../middlewares/validaAdmin");
+router.use(validarAdmin);
+router.get("/verificar", (_req, res) => res.json({ ok: true, perfil: "admin" }));
+router.get("/usuarios", admin.listar);
+router.get("/usuarios/:id", admin.buscar);
+router.put("/usuarios/:id", admin.atualizar);
+router.delete("/usuarios/:id", admin.excluir);
+module.exports = router;

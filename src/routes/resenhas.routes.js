@@ -1,0 +1,14 @@
+const express = require("express");
+const router = express.Router();
+const { cadastrar, listar, buscar, atualizar, excluir } = require("../controllers/resenhas.controller");
+router.post("/", cadastrar);
+router.post("/cadastrar", cadastrar);
+router.get("/", listar);
+router.get("/listar", listar);
+router.get("/buscar/:id", buscar);
+router.get("/:id", buscar);
+router.put("/atualizar/:id", atualizar);
+router.put("/:id", atualizar);
+router.delete("/excluir/:id", excluir);
+router.delete("/:id", excluir);
+module.exports = router;

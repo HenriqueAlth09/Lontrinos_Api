@@ -1,0 +1,1404 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-06T12:41:13.317751+00:00",
+  "__export_source": "insomnia.desktop.app:v13.4.0",
+  "resources": [
+    {
+      "_id": "wrk_ac19088c3d574e89be1f",
+      "_type": "workspace",
+      "name": "Lontrinos | Backend completo",
+      "description": "Coleção gerada a partir das rotas reais do backend Lontrinos. Exemplos de JSON preenchidos; tokens ficam no ambiente.",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_83b22137a75e4001a9ba",
+      "_type": "environment",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000",
+        "admin_token": "COLE_AQUI_SEU_TOKEN_ADMIN",
+        "leitor_token": "COLE_AQUI_O_TOKEN_DO_LOGIN",
+        "id": 1,
+        "sala_id": 1,
+        "usuario_id": 2,
+        "livro_id": 1,
+        "plano_id": 1,
+        "produto_id": 1
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "admin_token",
+          "leitor_token",
+          "id",
+          "sala_id",
+          "usuario_id",
+          "livro_id",
+          "plano_id",
+          "produto_id"
+        ]
+      },
+      "color": null,
+      "isPrivate": false
+    },
+    {
+      "_id": "fld_55c66b76ddc44ad2bb0a",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Administradores",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_06fef9eb19e64df9beeb",
+      "_type": "request",
+      "parentId": "fld_55c66b76ddc44ad2bb0a",
+      "name": "GET /verificar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/admin/verificar",
+      "description": "Rota real: GET /api/admin/verificar. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_8a62ea881dad45c28f51",
+      "_type": "request",
+      "parentId": "fld_55c66b76ddc44ad2bb0a",
+      "name": "GET /usuarios",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/admin/usuarios",
+      "description": "Rota real: GET /api/admin/usuarios. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_c123ea63184547b78055",
+      "_type": "request",
+      "parentId": "fld_55c66b76ddc44ad2bb0a",
+      "name": "GET /usuarios/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/admin/usuarios/{{ _.id }}",
+      "description": "Rota real: GET /api/admin/usuarios/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_c8c16363bc8e404f9532",
+      "_type": "request",
+      "parentId": "fld_55c66b76ddc44ad2bb0a",
+      "name": "PUT /usuarios/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/admin/usuarios/{{ _.id }}",
+      "description": "Rota real: PUT /api/admin/usuarios/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Alice Atualizada\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_cb0ff3fa15414ccd81d4",
+      "_type": "request",
+      "parentId": "fld_55c66b76ddc44ad2bb0a",
+      "name": "DELETE /usuarios/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/admin/usuarios/{{ _.id }}",
+      "description": "Rota real: DELETE /api/admin/usuarios/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_6b4cb6f576fd417dbc32",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Leitores",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_6997d89dfd5841dea276",
+      "_type": "request",
+      "parentId": "fld_6b4cb6f576fd417dbc32",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/leitores/cadastrar",
+      "description": "Rota real: POST /api/leitores/cadastrar. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Alice\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"alice@email.com\",\n  \"senha\": \"senha_segura_123\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_7069d741c4144b1ba1a4",
+      "_type": "request",
+      "parentId": "fld_6b4cb6f576fd417dbc32",
+      "name": "POST /login",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/leitores/login",
+      "description": "Rota real: POST /api/leitores/login. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"alice@email.com\",\n  \"senha\": \"senha_segura_123\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_82eba9094c6c40c88934",
+      "_type": "request",
+      "parentId": "fld_6b4cb6f576fd417dbc32",
+      "name": "GET /perfil",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/leitores/perfil",
+      "description": "Rota real: GET /api/leitores/perfil. Token do leitor.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_550927200e87474f8ce1",
+      "_type": "request",
+      "parentId": "fld_6b4cb6f576fd417dbc32",
+      "name": "PUT /perfil",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/leitores/perfil",
+      "description": "Rota real: PUT /api/leitores/perfil. Token do leitor.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Alice Atualizada\",\n  \"bio\": \"Gosto de fantasia\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_fcfaceb4ddab4f71802d",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Usuários",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_a7d556218fa44258bb7b",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/usuarios/cadastrar",
+      "description": "Rota real: POST /api/usuarios/cadastrar. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Alice\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"alice@email.com\",\n  \"senha\": \"senha_segura_123\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_e74694b55c42485f8177",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "POST /login",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/usuarios/login",
+      "description": "Rota real: POST /api/usuarios/login. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"alice@email.com\",\n  \"senha\": \"senha_segura_123\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_9faa3399b04843eca4a6",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/usuarios/listar",
+      "description": "Rota real: GET /api/usuarios/listar. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4e47f864414a4a959943",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/usuarios/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/usuarios/buscar/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_da1d23b6e9bc4839b718",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/usuarios/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/usuarios/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Alice Atualizada\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_c64927bbd3aa40bc9099",
+      "_type": "request",
+      "parentId": "fld_fcfaceb4ddab4f71802d",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/usuarios/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/usuarios/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_18642342d3b94c90ae3c",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Salas",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_c4bcf81ba1ae4f4a8b65",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/salas/listar",
+      "description": "Rota real: GET /api/salas/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_ab4bfb5951a845489843",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/salas/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/salas/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_7b4624b08a2c4e2dab8e",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "POST /cadastrar — Sala de gênero",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/salas/cadastrar",
+      "description": "Rota real: POST /api/salas/cadastrar. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Fantasia\",\n  \"tipo\": \"GENERO\",\n  \"genero\": \"Fantasia\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_a4beeec14d844cb496fb",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/salas/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/salas/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Fantasia e aventura\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_210a7b50b6384a2db08e",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/salas/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/salas/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_7776940627544ca88fde",
+      "_type": "request",
+      "parentId": "fld_18642342d3b94c90ae3c",
+      "name": "POST /cadastrar — Sala do clube",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/salas/cadastrar",
+      "description": "Exemplo de sala vinculada a um livro existente. Requer token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Clube do Livro — O Hobbit\",\n  \"tipo\": \"CLUBE\",\n  \"livroId\": 1\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      }
+    },
+    {
+      "_id": "fld_4ccb71255d624c79abb7",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Mensagens",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_515c7b2245bd4d7e982d",
+      "_type": "request",
+      "parentId": "fld_4ccb71255d624c79abb7",
+      "name": "POST /cadastrar — Enviar mensagem",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/mensagens/cadastrar",
+      "description": "Rota real: POST /api/mensagens/cadastrar. Token do leitor.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"salaId\": 1,\n  \"texto\": \"Oi, alguém aqui gosta de fantasia?\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_0619338058e14ac09277",
+      "_type": "request",
+      "parentId": "fld_4ccb71255d624c79abb7",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/mensagens/listar?salaId={{ _.sala_id }}",
+      "description": "Rota real: GET /api/mensagens/listar. Token do leitor.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_fb4aa2ef46ec4861b33b",
+      "_type": "request",
+      "parentId": "fld_4ccb71255d624c79abb7",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/mensagens/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/mensagens/buscar/:id. Token do leitor.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_b1938b494bfd4089ae32",
+      "_type": "request",
+      "parentId": "fld_4ccb71255d624c79abb7",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/mensagens/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/mensagens/atualizar/:id. Token do leitor.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"texto\": \"Mensagem editada\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_28b8d3ce345d44de9285",
+      "_type": "request",
+      "parentId": "fld_4ccb71255d624c79abb7",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/mensagens/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/mensagens/excluir/:id. Token do leitor.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.leitor_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_2141c69d2d404df39ff4",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Livros",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_62435a0091a045adabc0",
+      "_type": "request",
+      "parentId": "fld_2141c69d2d404df39ff4",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/livros/cadastrar",
+      "description": "Rota real: POST /api/livros/cadastrar. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J. R. R. Tolkien\",\n  \"genero\": \"Fantasia\",\n  \"sinopse\": \"Uma aventura fantástica\",\n  \"capa\": \"https://exemplo.com/capa.jpg\",\n  \"paginas\": 310,\n  \"ano\": 1937\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_47bd3125aef34b92b18d",
+      "_type": "request",
+      "parentId": "fld_2141c69d2d404df39ff4",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/livros/listar",
+      "description": "Rota real: GET /api/livros/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_667cdb10544e43c38bab",
+      "_type": "request",
+      "parentId": "fld_2141c69d2d404df39ff4",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/livros/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/livros/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4a20e29cb63840b79143",
+      "_type": "request",
+      "parentId": "fld_2141c69d2d404df39ff4",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/livros/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/livros/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J. R. R. Tolkien\",\n  \"genero\": \"Fantasia\",\n  \"sinopse\": \"Uma aventura fantástica\",\n  \"capa\": \"https://exemplo.com/capa.jpg\",\n  \"paginas\": 310,\n  \"ano\": 1937\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_f0519eaefa684ccf8b23",
+      "_type": "request",
+      "parentId": "fld_2141c69d2d404df39ff4",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/livros/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/livros/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_b048f3266ffc4523a052",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Resenhas",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_999574b028c04cf981a9",
+      "_type": "request",
+      "parentId": "fld_b048f3266ffc4523a052",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/resenhas/cadastrar",
+      "description": "Rota real: POST /api/resenhas/cadastrar. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"Minha resenha\",\n  \"texto\": \"Gostei bastante do livro\",\n  \"nota\": 5,\n  \"spoiler\": false,\n  \"usuarioId\": 2,\n  \"livroId\": 1\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_c35057c2a38f4c13a7b2",
+      "_type": "request",
+      "parentId": "fld_b048f3266ffc4523a052",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/resenhas/listar",
+      "description": "Rota real: GET /api/resenhas/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_8cb94b64b8c84d88803b",
+      "_type": "request",
+      "parentId": "fld_b048f3266ffc4523a052",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/resenhas/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/resenhas/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_9a483375794a4fe08189",
+      "_type": "request",
+      "parentId": "fld_b048f3266ffc4523a052",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/resenhas/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/resenhas/atualizar/:id. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"Resenha atualizada\",\n  \"texto\": \"Atualizei minha opinião\",\n  \"nota\": 4,\n  \"spoiler\": false\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_6d388f9b23844b6cb3cd",
+      "_type": "request",
+      "parentId": "fld_b048f3266ffc4523a052",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/resenhas/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/resenhas/excluir/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_c51d6199999948a6b9c0",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Produtos",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_66c418d7784049fb97aa",
+      "_type": "request",
+      "parentId": "fld_c51d6199999948a6b9c0",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/produtos/cadastrar",
+      "description": "Rota real: POST /api/produtos/cadastrar. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Marcador de páginas\",\n  \"categoria\": \"Acessórios\",\n  \"descricao\": \"Marcador ilustrado\",\n  \"preco\": 12.5,\n  \"estoque\": 20,\n  \"imagem\": \"https://exemplo.com/produto.jpg\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_f8d73d0585a444ca9b45",
+      "_type": "request",
+      "parentId": "fld_c51d6199999948a6b9c0",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/produtos/listar",
+      "description": "Rota real: GET /api/produtos/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4f16b92e16254c31ac63",
+      "_type": "request",
+      "parentId": "fld_c51d6199999948a6b9c0",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/produtos/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/produtos/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_f6f9a52dbafd426d8452",
+      "_type": "request",
+      "parentId": "fld_c51d6199999948a6b9c0",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/produtos/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/produtos/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Marcador atualizado\",\n  \"categoria\": \"Acessórios\",\n  \"descricao\": \"Novo modelo\",\n  \"preco\": 15.0,\n  \"estoque\": 30,\n  \"imagem\": \"https://exemplo.com/produto.jpg\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_3c0a158b474c40b2b719",
+      "_type": "request",
+      "parentId": "fld_c51d6199999948a6b9c0",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/produtos/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/produtos/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_902864c80365411697b9",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Planos",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_443e0ebd953243f2b9cc",
+      "_type": "request",
+      "parentId": "fld_902864c80365411697b9",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/planos/cadastrar",
+      "description": "Rota real: POST /api/planos/cadastrar. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Básico\",\n  \"preco\": 19.9,\n  \"duracao\": 30,\n  \"beneficios\": \"Acesso ao clube do livro\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_6be7ddeaf9474a41bbb1",
+      "_type": "request",
+      "parentId": "fld_902864c80365411697b9",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/planos/listar",
+      "description": "Rota real: GET /api/planos/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_53c921c765504c7ca7b9",
+      "_type": "request",
+      "parentId": "fld_902864c80365411697b9",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/planos/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/planos/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_380ca6b7f4e74176b5fc",
+      "_type": "request",
+      "parentId": "fld_902864c80365411697b9",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/planos/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/planos/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"preco\": 24.9\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_acce14f59cc544a8ba00",
+      "_type": "request",
+      "parentId": "fld_902864c80365411697b9",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/planos/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/planos/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_cebf870b4b9142798e11",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Assinaturas",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_e4ea84be7db541b7913a",
+      "_type": "request",
+      "parentId": "fld_cebf870b4b9142798e11",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/assinaturas/cadastrar",
+      "description": "Rota real: POST /api/assinaturas/cadastrar. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 2,\n  \"planoId\": 1,\n  \"fim\": \"2026-12-31T23:59:59.000Z\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_382870798e534ee1b88a",
+      "_type": "request",
+      "parentId": "fld_cebf870b4b9142798e11",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/assinaturas/listar",
+      "description": "Rota real: GET /api/assinaturas/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_634c835e16c54f79bf07",
+      "_type": "request",
+      "parentId": "fld_cebf870b4b9142798e11",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/assinaturas/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/assinaturas/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_0c07061cc20a420db5be",
+      "_type": "request",
+      "parentId": "fld_cebf870b4b9142798e11",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/assinaturas/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/assinaturas/atualizar/:id. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"fim\": \"2027-01-31T23:59:59.000Z\"\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_f0f162deebfb43308456",
+      "_type": "request",
+      "parentId": "fld_cebf870b4b9142798e11",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/assinaturas/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/assinaturas/excluir/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_92113896066f4bee8890",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Pedidos",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_16c151029ada4109b56d",
+      "_type": "request",
+      "parentId": "fld_92113896066f4bee8890",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/pedidos/cadastrar",
+      "description": "Rota real: POST /api/pedidos/cadastrar. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"usuarioId\": 2,\n  \"produtoId\": 1,\n  \"quantidade\": 1\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_8aabc5049787446d87da",
+      "_type": "request",
+      "parentId": "fld_92113896066f4bee8890",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/pedidos/listar",
+      "description": "Rota real: GET /api/pedidos/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4ca63d5a030c4772a081",
+      "_type": "request",
+      "parentId": "fld_92113896066f4bee8890",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/pedidos/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/pedidos/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4e5ca9edc13548ab979c",
+      "_type": "request",
+      "parentId": "fld_92113896066f4bee8890",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/pedidos/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/pedidos/atualizar/:id. Sem token obrigatório.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"quantidade\": 2\n}"
+      },
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_787e5f97211243398afd",
+      "_type": "request",
+      "parentId": "fld_92113896066f4bee8890",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/pedidos/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/pedidos/excluir/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "fld_56ef61fc291946238b92",
+      "_type": "request_group",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "Enquetes",
+      "description": "Rotas do backend",
+      "environment": {}
+    },
+    {
+      "_id": "req_40bfe6ab1f82475cbc43",
+      "_type": "request",
+      "parentId": "fld_56ef61fc291946238b92",
+      "name": "POST /cadastrar",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/enquetes/cadastrar",
+      "description": "Rota real: POST /api/enquetes/cadastrar. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pergunta\": \"Qual livro leremos?\",\n  \"opcoes\": [\n    \"O Hobbit\",\n    \"1984\"\n  ]\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4cb0c4c61c0743338afb",
+      "_type": "request",
+      "parentId": "fld_56ef61fc291946238b92",
+      "name": "GET /listar",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/enquetes/listar",
+      "description": "Rota real: GET /api/enquetes/listar. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_722010dc7dd549cd86ba",
+      "_type": "request",
+      "parentId": "fld_56ef61fc291946238b92",
+      "name": "GET /buscar/:id",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/enquetes/buscar/{{ _.id }}",
+      "description": "Rota real: GET /api/enquetes/buscar/:id. Sem token obrigatório.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {},
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_bf1461f46a7846e5901c",
+      "_type": "request",
+      "parentId": "fld_56ef61fc291946238b92",
+      "name": "PUT /atualizar/:id",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/api/enquetes/atualizar/{{ _.id }}",
+      "description": "Rota real: PUT /api/enquetes/atualizar/:id. Token administrativo.",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pergunta\": \"Qual o próximo livro?\",\n  \"opcoes\": [\n    \"1984\",\n    \"O Hobbit\"\n  ]\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_4557b574e7914d0bb33c",
+      "_type": "request",
+      "parentId": "fld_56ef61fc291946238b92",
+      "name": "DELETE /excluir/:id",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/enquetes/excluir/{{ _.id }}",
+      "description": "Rota real: DELETE /api/enquetes/excluir/:id. Token administrativo.",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.admin_token }}",
+        "prefix": "Bearer"
+      },
+      "settingStoreCookies": true,
+      "settingSendCookies": true
+    },
+    {
+      "_id": "req_f5a17def0f084ff59c82",
+      "_type": "request",
+      "parentId": "wrk_ac19088c3d574e89be1f",
+      "name": "GET /__health",
+      "method": "GET",
+      "url": "{{ _.base_url }}/__health",
+      "headers": [],
+      "parameters": [],
+      "body": {},
+      "authentication": {}
+    }
+  ]
+}

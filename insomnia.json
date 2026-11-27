@@ -1,0 +1,775 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-10-30T12:47:14.056Z",
+  "__export_source": "backend-aula",
+  "resources": [
+    {
+      "_id": "wrk_backend",
+      "_type": "workspace",
+      "name": "Backend Aula"
+    },
+    {
+      "_id": "fld_backend",
+      "_type": "request_group",
+      "parentId": "wrk_backend",
+      "name": "backend"
+    },
+    {
+      "_id": "fld_Usuario",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Usuario"
+    },
+    {
+      "_id": "req_Usuario_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/listar"
+    },
+    {
+      "_id": "req_Usuario_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/buscar/:id"
+    },
+    {
+      "_id": "req_Usuario_POST",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/usuario/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"cpf\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"foto\": \"string\",\n  \"bio\": \"string\",\n  \"assinante\": true\n}"
+      }
+    },
+    {
+      "_id": "req_Usuario_PUT",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/usuario/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"cpf\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"foto\": \"string\",\n  \"bio\": \"string\",\n  \"assinante\": true\n}"
+      }
+    },
+    {
+      "_id": "req_Usuario_DELETE",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/usuario/excluir/:id"
+    },
+    {
+      "_id": "fld_Livro",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Livro"
+    },
+    {
+      "_id": "req_Livro_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Livro",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/livro/listar"
+    },
+    {
+      "_id": "req_Livro_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Livro",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/livro/buscar/:id"
+    },
+    {
+      "_id": "req_Livro_POST",
+      "_type": "request",
+      "parentId": "fld_Livro",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/livro/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"string\",\n  \"autor\": \"string\",\n  \"genero\": \"string\",\n  \"sinopse\": \"string\",\n  \"capa\": \"string\",\n  \"paginas\": 0,\n  \"ano\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Livro_PUT",
+      "_type": "request",
+      "parentId": "fld_Livro",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/livro/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"string\",\n  \"autor\": \"string\",\n  \"genero\": \"string\",\n  \"sinopse\": \"string\",\n  \"capa\": \"string\",\n  \"paginas\": 0,\n  \"ano\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Livro_DELETE",
+      "_type": "request",
+      "parentId": "fld_Livro",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/livro/excluir/:id"
+    },
+    {
+      "_id": "fld_Resenha",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Resenha"
+    },
+    {
+      "_id": "req_Resenha_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Resenha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/resenha/listar"
+    },
+    {
+      "_id": "req_Resenha_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Resenha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/resenha/buscar/:id"
+    },
+    {
+      "_id": "req_Resenha_POST",
+      "_type": "request",
+      "parentId": "fld_Resenha",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/resenha/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"string\",\n  \"texto\": \"string\",\n  \"nota\": 0,\n  \"spoiler\": true,\n  \"data\": \"2026-10-30T12:47:14.055Z\",\n  \"usuarioId\": 0,\n  \"livroId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Resenha_PUT",
+      "_type": "request",
+      "parentId": "fld_Resenha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/resenha/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"titulo\": \"string\",\n  \"texto\": \"string\",\n  \"nota\": 0,\n  \"spoiler\": true,\n  \"data\": \"2026-10-30T12:47:14.055Z\",\n  \"usuarioId\": 0,\n  \"livroId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Resenha_DELETE",
+      "_type": "request",
+      "parentId": "fld_Resenha",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/resenha/excluir/:id"
+    },
+    {
+      "_id": "fld_Mensagem",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Mensagem"
+    },
+    {
+      "_id": "req_Mensagem_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Mensagem",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/mensagem/listar"
+    },
+    {
+      "_id": "req_Mensagem_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Mensagem",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/mensagem/buscar/:id"
+    },
+    {
+      "_id": "req_Mensagem_POST",
+      "_type": "request",
+      "parentId": "fld_Mensagem",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/mensagem/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"texto\": \"string\",\n  \"data\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Mensagem_PUT",
+      "_type": "request",
+      "parentId": "fld_Mensagem",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/mensagem/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"texto\": \"string\",\n  \"data\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Mensagem_DELETE",
+      "_type": "request",
+      "parentId": "fld_Mensagem",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/mensagem/excluir/:id"
+    },
+    {
+      "_id": "fld_Produto",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Produto"
+    },
+    {
+      "_id": "req_Produto_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/listar"
+    },
+    {
+      "_id": "req_Produto_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/buscar/:id"
+    },
+    {
+      "_id": "req_Produto_POST",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/produto/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"categoria\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 0,\n  \"estoque\": 0,\n  \"imagem\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Produto_PUT",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/produto/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"categoria\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 0,\n  \"estoque\": 0,\n  \"imagem\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Produto_DELETE",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/produto/excluir/:id"
+    },
+    {
+      "_id": "fld_Pedido",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Pedido"
+    },
+    {
+      "_id": "req_Pedido_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/pedido/listar"
+    },
+    {
+      "_id": "req_Pedido_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/pedido/buscar/:id"
+    },
+    {
+      "_id": "req_Pedido_POST",
+      "_type": "request",
+      "parentId": "fld_Pedido",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/pedido/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"quantidade\": 0,\n  \"valorTotal\": 0,\n  \"data\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0,\n  \"produtoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Pedido_PUT",
+      "_type": "request",
+      "parentId": "fld_Pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/pedido/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"quantidade\": 0,\n  \"valorTotal\": 0,\n  \"data\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0,\n  \"produtoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Pedido_DELETE",
+      "_type": "request",
+      "parentId": "fld_Pedido",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/pedido/excluir/:id"
+    },
+    {
+      "_id": "fld_Plano",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Plano"
+    },
+    {
+      "_id": "req_Plano_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Plano",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/plano/listar"
+    },
+    {
+      "_id": "req_Plano_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Plano",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/plano/buscar/:id"
+    },
+    {
+      "_id": "req_Plano_POST",
+      "_type": "request",
+      "parentId": "fld_Plano",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/plano/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"preco\": 0,\n  \"duracao\": 0,\n  \"beneficios\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Plano_PUT",
+      "_type": "request",
+      "parentId": "fld_Plano",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/plano/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"preco\": 0,\n  \"duracao\": 0,\n  \"beneficios\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Plano_DELETE",
+      "_type": "request",
+      "parentId": "fld_Plano",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/plano/excluir/:id"
+    },
+    {
+      "_id": "fld_Assinatura",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Assinatura"
+    },
+    {
+      "_id": "req_Assinatura_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Assinatura",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/assinatura/listar"
+    },
+    {
+      "_id": "req_Assinatura_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Assinatura",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/assinatura/buscar/:id"
+    },
+    {
+      "_id": "req_Assinatura_POST",
+      "_type": "request",
+      "parentId": "fld_Assinatura",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/assinatura/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"inicio\": \"2026-10-30T12:47:14.056Z\",\n  \"fim\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0,\n  \"planoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Assinatura_PUT",
+      "_type": "request",
+      "parentId": "fld_Assinatura",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/assinatura/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"inicio\": \"2026-10-30T12:47:14.056Z\",\n  \"fim\": \"2026-10-30T12:47:14.056Z\",\n  \"usuarioId\": 0,\n  \"planoId\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Assinatura_DELETE",
+      "_type": "request",
+      "parentId": "fld_Assinatura",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/assinatura/excluir/:id"
+    },
+    {
+      "_id": "fld_Enquete",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Enquete"
+    },
+    {
+      "_id": "req_Enquete_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Enquete",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/enquete/listar"
+    },
+    {
+      "_id": "req_Enquete_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Enquete",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/enquete/buscar/:id"
+    },
+    {
+      "_id": "req_Enquete_POST",
+      "_type": "request",
+      "parentId": "fld_Enquete",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/enquete/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pergunta\": \"string\",\n  \"resposta\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Enquete_PUT",
+      "_type": "request",
+      "parentId": "fld_Enquete",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/enquete/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pergunta\": \"string\",\n  \"resposta\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Enquete_DELETE",
+      "_type": "request",
+      "parentId": "fld_Enquete",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/enquete/excluir/:id"
+    }
+  ]
+}
