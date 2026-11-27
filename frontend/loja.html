@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Lontrinos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .header-loja .menu-icon {
+            width: 24px;
+            filter: invert(1);
+        }
+    </style>
+<style>
+.header-icon{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:0;color:var(--cor-branco);font-size:25px;text-decoration:none;cursor:pointer;padding:4px}
+.loja-topo{flex-wrap:wrap}.busca-loja{display:flex;align-items:center;gap:10px;flex:1;max-width:440px;background:#fff;border:1px solid var(--cor-borda);border-radius:24px;padding:10px 16px;color:var(--cor-vinho)}.busca-loja input{width:100%;border:0;outline:0;background:transparent;color:var(--cor-vinho);font:inherit}.link-carrinho{color:var(--cor-vinho);font-weight:700;text-decoration:none}.produto-acoes{display:flex;gap:8px;align-items:center}.produto-acoes .btn-carrinho{flex:1}.btn-favorito{border:1px solid var(--cor-vinho);border-radius:9px;background:white;color:var(--cor-vinho);font-size:23px;width:42px;height:42px;cursor:pointer}.btn-favorito.favoritado{background:var(--cor-dourado);color:var(--cor-vinho)}
+</style>
+</head>
+<body class="loja-body">
+
+<header class="site-header">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span> LONTRINOS <small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao"><a href="index.html" data-page="index.html" class="">HOME</a><a href="sobre.html" data-page="sobre.html" class="">SOBRE NÓS</a><a href="livros.html" data-page="livros.html" class="">LIVROS</a><a href="resenhas.html" data-page="resenhas.html" class="">RESENHAS</a><a href="clube.html" data-page="clube.html" class="">CLUBE</a><a href="chat.html" data-page="chat.html" class="">CHAT</a><a href="loja.html" data-page="loja.html" class="ativo">LOJA</a><a href="planos.html" data-page="planos.html" class="">PLANOS</a><a href="perfil.html" data-page="perfil.html" class="">PERFIL</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar"><img src="assets/icon-busca.svg" alt="PESQUISAR"></button><a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho"><img src="assets/icon-carrinho.svg" alt="CARRINHO"></a><a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil"><img class="perfil" src="assets/user.jpg" alt="PERFIL"></a></div>
+</header>
+
+<main>
+    <section class="loja-banner">
+        <div class="container">
+            <span class="subtitulo">PRODUTOS AUTORAIS</span>
+            <h1>A Loja Lontrinos</h1>
+            <p>Produtos pensados para leitores, por leitores</p>
+        </div>
+    </section>
+
+    <section class="loja-produtos">
+        <div class="container">
+            <div class="loja-topo">
+                <label class="busca-loja"><span>⌕</span><input id="buscaProdutos" type="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos"></label>
+                <a class="link-carrinho" href="carrinho.html">🛒 Ver favoritos e carrinho</a>
+                <span class="qtd-produtos">Carregando produtos...</span>
+            </div>
+
+            <div class="grid-produtos" id="gridProdutos"><p class="estado-carregamento">Carregando produtos cadastrados...</p></div>
+        </div>
+    </section>
+</main>
+
+<footer id="contato">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo-area">
+                    <img src="assets/logoLontrino.png" alt="logo">
+                    <span>LONTRINOS</span>
+                </div>
+                <p>Um clube para apaixonados por literatura, leitura e boas histórias.</p>
+            </div>
+            <div><h4>NAVEGAÇÃO</h4><a href="index.html">Home</a><a href="loja.html">Loja</a><a href="chat.html">Chat</a><a href="clube.html">Clube</a><a href="chat.html">Chat</a><a href="planos.html">Planos</a><a href="sobre.html">Sobre Nós</a><a href="resenhas.html">Resenhas</a></div>
+            <div><h4>REDES SOCIAIS</h4><a>Instagram</a><a>TikTok</a><a>Facebook</a></div>
+            <div><h4>NEWSLETTER</h4><p>Receba novidades sobre livros e eventos.</p><input type="email" placeholder="Seu e-mail"><button class="btn">ENVIAR</button></div>
+        </div>
+        <div class="copyright">© 2026 Lontrinos - Todos os direitos reservados.</div>
+    </div>
+</footer>
+
+</body>
+</html>

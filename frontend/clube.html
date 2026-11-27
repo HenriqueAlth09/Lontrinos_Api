@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube - Lontrinos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="clube-body">
+
+<header class="site-header">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span> LONTRINOS <small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao"><a href="index.html" data-page="index.html" class="">HOME</a><a href="sobre.html" data-page="sobre.html" class="">SOBRE NÓS</a><a href="livros.html" data-page="livros.html" class="">LIVROS</a><a href="resenhas.html" data-page="resenhas.html" class="">RESENHAS</a><a href="clube.html" data-page="clube.html" class="ativo">CLUBE</a><a href="chat.html" data-page="chat.html" class="">CHAT</a><a href="loja.html" data-page="loja.html" class="">LOJA</a><a href="planos.html" data-page="planos.html" class="">PLANOS</a><a href="perfil.html" data-page="perfil.html" class="">PERFIL</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar"><img src="assets/icon-busca.svg" alt="PESQUISAR"></button><a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho"><img src="assets/icon-carrinho.svg" alt="CARRINHO"></a><a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil"><img class="perfil" src="assets/user.jpg" alt="PERFIL"></a></div>
+</header>
+
+<main>
+    <section class="clube-topo">
+        <div class="container">
+            <span class="badge-membro">👑 Área exclusiva para membros</span>
+
+            <div class="clube-header">
+                <div class="clube-texto">
+                    <h1>Bem-vindo ao Clube</h1>
+                    <p>Seu espaço exclusivo para leituras coletivas, discussões profundas e conexão com outros amantes da literatura.</p>
+                </div>
+
+                <div class="clube-stats">
+                    <div class="stat-card destaque">
+                        <span class="num">28</span>
+                        <span class="label">Livros lidos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="num">2.940</span>
+                        <span class="label">Pontos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="num">#6</span>
+                        <span class="label">Ranking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clube-conteudo">
+        <div class="container">
+
+            <div class="clube-abas">
+                <button class="aba"><span>💬</span> Chat Exclusivo</button>
+                <button class="aba"><span>📊</span> Enquetes</button>
+                <button class="aba"><span>📅</span> Calendário</button>
+                <button class="aba ativo"><span>🏆</span> Ranking</button>
+            </div>
+
+            <h2 class="titulo-secao">Ranking de Leitores</h2>
+
+            <div class="lista-ranking">
+                <div class="item-ranking">
+                    <div class="posicao">
+                        <span class="medalha ouro">🥇</span>
+                    </div>
+                    <img src="assets/user.jpg" alt="Mariana" class="avatar">
+                    <div class="info-user">
+                        <h4>Mariana Ferreira</h4>
+                        <p>47 livros lidos</p>
+                    </div>
+                    <div class="pontos">
+                        <span class="num">4.820</span>
+                        <span>pontos</span>
+                    </div>
+                </div>
+
+                <div class="item-ranking">
+                    <div class="posicao">
+                        <span class="medalha prata">🥈</span>
+                    </div>
+                    <img src="assets/user.jpg" alt="Rafael" class="avatar">
+                    <div class="info-user">
+                        <h4>Rafael Monteiro</h4>
+                        <p>42 livros lidos</p>
+                    </div>
+                    <div class="pontos">
+                        <span class="num">4.340</span>
+                        <span>pontos</span>
+                    </div>
+                </div>
+
+                <div class="item-ranking">
+                    <div class="posicao">
+                        <span class="medalha bronze">🥉</span>
+                    </div>
+                    <img src="assets/user.jpg" alt="Beatriz" class="avatar">
+                    <div class="info-user">
+                        <h4>Beatriz Santos</h4>
+                        <p>38 livros lidos</p>
+                    </div>
+                    <div class="pontos">
+                        <span class="num">4.120</span>
+                        <span>pontos</span>
+                    </div>
+                </div>
+
+                <div class="item-ranking voce">
+                    <div class="posicao">
+                        <span>#6</span>
+                    </div>
+                    <img src="assets/user.jpg" alt="Você" class="avatar">
+                    <div class="info-user">
+                        <h4>Você</h4>
+                        <p>28 livros lidos</p>
+                    </div>
+                    <div class="pontos">
+                        <span class="num">2.940</span>
+                        <span>pontos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="contato">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo-area">
+                    <img src="assets/logoLontrino.png" alt="logo">
+                    <span>LONTRINOS</span>
+                </div>
+                <p>Um clube para apaixonados por literatura, leitura e boas histórias.</p>
+            </div>
+
+            <div><h4>NAVEGAÇÃO</h4><a href="index.html">Home</a><a href="loja.html">Loja</a><a href="chat.html">Chat</a><a href="clube.html">Clube</a><a href="chat.html">Chat</a><a href="planos.html">Planos</a><a href="sobre.html">Sobre Nós</a><a href="resenhas.html">Resenhas</a></div>
+
+            <div>
+                <h4>REDES SOCIAIS</h4>
+                <a>Instagram</a>
+                <a>TikTok</a>
+                <a>Facebook</a>
+            </div>
+            <div>
+                <h4>NEWSLETTER</h4>
+                <p>Receba novidades sobre livros e eventos.</p>
+                <input type="email" placeholder="Seu e-mail">
+                <button class="btn">ENVIAR</button>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Lontrinos - Todos os direitos reservados.</div>
+    </div>
+</footer>
+
+</body>
+</html>

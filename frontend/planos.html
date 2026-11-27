@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - Lontrinos Clube do Livro</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .preco-total-detalhe {
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            margin-top: -8px;
+            margin-bottom: 15px;
+            min-height: 1.2em;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body class="planos-body">
+
+    <header class="site-header planos-nav">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span>Lontrinos<small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao" aria-label="Navegação principal"><a href="index.html">Home</a><a href="chat.html">Chat</a><a href="loja.html">Loja</a><a href="clube.html">Clube</a><a href="planos.html" class="ativo">Planos</a><a href="sobre.html">Sobre Nós</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar"><img src="assets/icon-busca.svg" alt=""></button><a class="header-icon planos-notificacao" href="perfil.html" aria-label="Notificações" title="Notificações">♧<span></span></a><a class="header-icon planos-perfil-icon" href="perfil.html" aria-label="Perfil" title="Perfil">♙</a></div>
+</header>
+
+    <main>
+
+        <section class="planos-hero">
+            <div class="container">
+                <div class="hero-badge-icone">
+                    <img src="assets/logoLontrino.png" alt="Lontra">
+                </div>
+                <span class="subtitulo-topo">FAÇA PARTE DA COMUNIDADE</span>
+                <h1>Seja um Lontrino</h1>
+                <p>
+                    O Lontrinos é um clube do livro criado para conectar leitores através de histórias,
+                    experiências e momentos especiais. Cada plano representa uma etapa dessa jornada,
+                    simbolizada pelas <strong>Pedrinhas Estelares</strong> — que mostram o nível de participação e
+                    conexão do leitor com a comunidade.
+                </p>
+
+                <div class="seletor-periodo">
+                    <button class="periodo-btn ativo" data-periodo="mensal">Mensal</button>
+                    <button class="periodo-btn" data-periodo="semestral">Semestral <span>-7%</span></button>
+                    <button class="periodo-btn" data-periodo="anual">Anual <span>-14%</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="planos-cards-section">
+            <div class="container">
+
+                <div class="guia-estrelas">
+                    <div class="estrela-item">
+                        <img src="assets/logoLontrino.png" alt="Estrela 1">
+                        <div>
+                            <h4>Pequena Estrela</h4>
+                            <span>Pedrinha da Curiosidade</span>
+                        </div>
+                    </div>
+                    <div class="estrela-item">
+                        <img src="assets/logoLontrino.png" alt="Estrela 2">
+                        <div>
+                            <h4>Estrela Companheira</h4>
+                            <span>Pedrinha da Conexão</span>
+                        </div>
+                    </div>
+                    <div class="estrela-item">
+                        <img src="assets/logoLontrino.png" alt="Estrela 3">
+                        <div>
+                            <h4>Constelação Lontrinos</h4>
+                            <span>Pedrinha da Eternidade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-planos">
+
+                    <div class="card-plano" data-mensal="34.90">
+                        <div class="card-topo-img">
+                            <img src="assets/logoLontrino.png" alt="Pequena Estrela">
+                        </div>
+                        <h3>Pequena Estrela</h3>
+                        <p class="pedrinha-legenda">💎 Pedrinha da Curiosidade</p>
+
+                        <div class="preco">
+                            <span class="rs">R$</span> <span class="valor">34,90</span><span class="mes">/mês</span>
+                        </div>
+                        <div class="preco-total-detalhe"></div>
+
+                        <button class="btn-plano">Quero ser uma Pequena</button>
+
+                        <ul class="beneficios-lista"><li><span class="check">✓</span> Livro selecionado do mês</li><li><span class="check">✓</span> Acesso ao chat geral da comunidade</li><li><span class="check">✓</span> Participação nas leituras coletivas</li><li><span class="check">✓</span> Adesivos exclusivos Lontrinos</li><li><span class="check">✓</span> 5% de desconto na loja</li></ul>
+                    </div>
+
+                    <div class="card-plano destaque-popular" data-mensal="44.90">
+                        <div class="badge-popular">✦ MAIS POPULAR ✦</div>
+                        <div class="card-topo-img">
+                            <img src="assets/logoLontrino.png" alt="Estrela Companheira">
+                        </div>
+                        <h3>Estrela Companheira</h3>
+                        <p class="pedrinha-legenda">💎 Pedrinha da Conexão</p>
+
+                        <div class="preco">
+                            <span class="rs">R$</span> <span class="valor">44,90</span><span class="mes">/mês</span>
+                        </div>
+                        <div class="preco-total-detalhe"></div>
+
+                        <button class="btn-plano amarelo">Quero ser uma Estrela</button>
+
+                        <ul class="beneficios-lista"><li><span class="check">✓</span> Livro selecionado do mês</li><li><span class="check">✓</span> Acesso ao chat geral da comunidade</li><li><span class="check">✓</span> Chat exclusivo para membros do plano</li><li><span class="check">✓</span> Lives especiais com autores convidados</li><li><span class="check">✓</span> Caneca personalizada Lontrinos</li><li><span class="check">✓</span> Adesivos e marcadores exclusivos</li><li><span class="check">✓</span> 10% de desconto na loja</li></ul>
+                    </div>
+
+                    <div class="card-plano" data-mensal="59.90">
+                        <div class="card-topo-img">
+                            <img src="assets/logoLontrino.png" alt="Constelação Lontrinos">
+                        </div>
+                        <h3>Constelação Lontrinos</h3>
+                        <p class="pedrinha-legenda">💎 Pedrinha da Eternidade</p>
+
+                        <div class="preco">
+                            <span class="rs">R$</span> <span class="valor">59,90</span><span class="mes">/mês</span>
+                        </div>
+                        <div class="preco-total-detalhe"></div>
+
+                        <button class="btn-plano">Quero ser uma Constelação</button>
+
+                        <ul class="beneficios-lista"><li><span class="check">✓</span> Livro selecionado do mês</li><li><span class="check">✓</span> Acesso ao chat geral da comunidade</li><li><span class="check">✓</span> Chat exclusivo para membros premium</li><li><span class="check">✓</span> Lives exclusivas com autores convidados</li><li><span class="check">✓</span> Encontros especiais de leitura</li><li><span class="check">✓</span> Kit exclusivo Lontrinos (caneca + itens)</li><li><span class="check">✓</span> Produtos colecionáveis exclusivos</li><li><span class="check">✓</span> Acesso antecipado a novidades do clube</li><li><span class="check">✓</span> 15% de desconto na loja</li></ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="citacao-section">
+            <div class="container">
+                <div class="citacao-card">
+                    <div class="icone-pequeno-citacao">🦦</div>
+                    <p>"Cada Pedrinha Estelar é um símbolo da sua jornada conosco. Quanto mais você lê, mais brilha."</p>
+                    <small>Sem fidelidade. Cancele quando quiser. Planos podem ser atualizados a qualquer momento.</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-area">
+                        <img src="assets/logoLontrino.png" alt="logo">
+                        <span>LONTRINOS</span>
+                    </div>
+                    <p>Um clube para quem acredita que cada livro é uma vida que ainda não vivemos.</p>
+                    <div class="redes-sociais-icons">
+                        <a class="social-circulo">📷</a>
+                        <a class="social-circulo">f</a>
+                        <a class="social-circulo">✉</a>
+                    </div>
+                </div>
+
+                <div><h4>NAVEGAÇÃO</h4><a href="index.html">Home</a><a href="loja.html">Loja</a><a href="chat.html">Chat</a><a href="clube.html">Clube</a><a href="planos.html">Planos</a><a href="sobre.html">Sobre Nós</a><a href="resenhas.html">Resenhas</a></div>
+
+                <div>
+                    <h4>CLUBE</h4>
+                    <a href="#">Como funciona</a>
+                    <a href="#">Planos e preços</a>
+                    <a href="#">Leitura do mês</a>
+                    <a href="#">Ranking de leitores</a>
+                    <a href="#">Eventos online</a>
+                </div>
+                <div>
+                    <h4>NEWSLETTER</h4>
+                    <p>Recomendações literárias toda semana, direto no seu e-mail.</p>
+                    <div class="newsletter-input-area">
+                        <input type="email" placeholder="seu@email.com">
+                        <button class="btn-enviar-seta">➔</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>© 2026 Lontrinos - Clube do Livro. Todos os direitos reservados.</span>
+                <div class="links-uteis">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos de uso</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

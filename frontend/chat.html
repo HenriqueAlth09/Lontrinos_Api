@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Lontrinos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js" defer></script>
+    <script src="chat.js" defer></script>
+</head>
+<body class="chat-body">
+
+<header class="site-header">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span> LONTRINOS <small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao"><a href="index.html" data-page="index.html" class="">HOME</a><a href="sobre.html" data-page="sobre.html" class="">SOBRE NÓS</a><a href="livros.html" data-page="livros.html" class="">LIVROS</a><a href="resenhas.html" data-page="resenhas.html" class="">RESENHAS</a><a href="clube.html" data-page="clube.html" class="">CLUBE</a><a href="chat.html" data-page="chat.html" class="ativo">CHAT</a><a href="loja.html" data-page="loja.html" class="">LOJA</a><a href="planos.html" data-page="planos.html" class="">PLANOS</a><a href="perfil.html" data-page="perfil.html" class="">PERFIL</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar"><img src="assets/icon-busca.svg" alt="PESQUISAR"></button><a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho"><img src="assets/icon-carrinho.svg" alt="CARRINHO"></a><a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil"><img class="perfil" src="assets/user.jpg" alt="PERFIL"></a></div>
+</header>
+
+<main class="chat-container">
+    <aside class="sidebar-canais">
+        <div class="servidor">
+            <img src="assets/logoLontrino.png" alt="">
+            <div>
+                <h3>Lontrinos</h3>
+                <p>Clube do Livro</p>
+            </div>
+        </div>
+        <label class="canal-busca-label" for="buscarCanal">CANAIS LITERÁRIOS</label>
+        <input id="buscarCanal" class="canal-busca" type="search" placeholder="Buscar gênero ou livro..." autocomplete="off">
+        <p id="avisoFixados" class="canal-contador">0/3 canais fixados</p>
+        <ul class="lista-canais" id="listaCanais"><li class="canal">Carregando salas...</li></ul>
+    </aside>
+
+    <section class="chat-principal">
+        <div class="chat-topo"><h2 id="chatTitulo"><span>#</span> Selecione uma sala</h2><p id="chatDescricao">Escolha um canal para conversar</p><span class="membros" id="chatStatus">Conectando...</span></div>
+
+        <div class="chat-mensagens" id="chatMensagens"><p class="chat-aviso">Selecione uma sala para ver as mensagens.</p></div>
+
+        <div class="chat-input">
+            <button type="button" id="btnChatAtualizar" title="Atualizar salas">↻</button>
+            <input type="text" id="inputMensagem" placeholder="Mensagem em #geral">
+            <button type="button" id="btnEnviarMensagem">➤</button>
+        </div>
+    </section>
+
+    <aside class="sidebar-online"><h4>INFORMAÇÕES</h4><p id="chatInfo">Escolha uma sala para começar. As mensagens são compartilhadas em tempo real.</p></aside>
+</main>
+
+</body>
+</html>

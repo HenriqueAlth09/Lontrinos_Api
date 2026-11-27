@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVROS - LONTRINOS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo-area" href="index.html">
+      <img src="assets/logoLontrino.png" alt="Logo Lontrinos">
+      <span>LONTRINOS <small>CLUBE DO LIVRO</small></span>
+    </a>
+
+    <nav class="menu-navegacao">
+      <a href="index.html" data-page="index.html">HOME</a>
+      <a href="sobre.html" data-page="sobre.html">SOBRE NÓS</a>
+      <a href="livros.html" data-page="livros.html" class="ativo">LIVROS</a>
+      <a href="resenhas.html" data-page="resenhas.html">RESENHAS</a>
+      <a href="clube.html" data-page="clube.html">CLUBE</a>
+      <a href="chat.html" data-page="chat.html">CHAT</a>
+      <a href="loja.html" data-page="loja.html">LOJA</a>
+      <a href="planos.html" data-page="planos.html">PLANOS</a>
+      <a href="perfil.html" data-page="perfil.html">PERFIL</a>
+    </nav>
+
+    <div class="header-itens">
+      <button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar">
+        <img src="assets/icon-busca.svg" alt="PESQUISAR">
+      </button>
+      <a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho">
+        <img src="assets/icon-carrinho.svg" alt="CARRINHO">
+      </a>
+      <a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil">
+        <img class="perfil" src="assets/user.jpg" alt="PERFIL">
+      </a>
+    </div>
+  </header>
+
+  <main class="pagina-livros">
+    <section class="livros-intro">
+      <p>EXPLORE NOSSA ESTANTE</p>
+      <h1>LIVROS</h1>
+      <label class="busca-livros">
+        <img src="assets/icon-busca.svg" alt="">
+        <input id="buscaLivros" type="search" placeholder="PESQUISAR LIVROS..." aria-label="Pesquisar livros">
+      </label>
+    </section>
+
+    <section class="grade-livros" id="gradeLivros"><p class="estado-carregamento">Carregando livros cadastrados...</p></section>
+  </main>
+
+  <div class="modal-sinopse-fundo" id="modalSinopseFundo" hidden>
+    <section class="modal-sinopse" role="dialog" aria-modal="true" aria-labelledby="tituloSinopse">
+      <button class="fechar-sinopse" id="fecharSinopse" aria-label="Fechar">&times;</button>
+      <h2 id="tituloSinopse"></h2>
+      <p id="textoSinopse"></p>
+    </section>
+  </div>
+
+  <script>
+    const modalFundo = document.getElementById('modalSinopseFundo');
+    document.getElementById('fecharSinopse').addEventListener('click', () => modalFundo.hidden = true);
+    modalFundo.addEventListener('click', e => { if (e.target === modalFundo) modalFundo.hidden = true; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') modalFundo.hidden = true; });
+  </script>
+
+</body>
+</html>

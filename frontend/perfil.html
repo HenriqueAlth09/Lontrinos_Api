@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube do Livro - Meu Perfil</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body class="clube-body">
+
+  <header class="site-header">
+    <a class="logo-area" href="index.html">
+      <img src="assets/logoLontrino.png" alt="Logo Lontrinos">
+      <span>LONTRINOS <small>CLUBE DO LIVRO</small></span>
+    </a>
+    <nav class="menu-navegacao">
+      <a href="index.html" data-page="index.html">HOME</a>
+      <a href="sobre.html" data-page="sobre.html">SOBRE NÓS</a>
+      <a href="livros.html" data-page="livros.html">LIVROS</a>
+      <a href="resenhas.html" data-page="resenhas.html">RESENHAS</a>
+      <a href="clube.html" data-page="clube.html">CLUBE</a>
+      <a href="chat.html" data-page="chat.html">CHAT</a>
+      <a href="loja.html" data-page="loja.html">LOJA</a>
+      <a href="planos.html" data-page="planos.html">PLANOS</a>
+      <a href="perfil.html" data-page="perfil.html" class="ativo">PERFIL</a>
+    </nav>
+    <div class="header-itens">
+      <button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar">
+        <img src="assets/icon-busca.svg" alt="PESQUISAR">
+      </button>
+      <a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho">
+        <img src="assets/icon-carrinho.svg" alt="CARRINHO">
+      </a>
+      <a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil">
+        <img class="perfil" src="assets/user.jpg" alt="PERFIL">
+      </a>
+      <button type="button" class="btn-sair" id="btnSair">SAIR DA CONTA</button>
+    </div>
+  </header>
+
+  <main class="perfil-pagina">
+    <div class="perfil-topo"><span>MINHA CONTA</span><h1>Seu cantinho no Lontrinos</h1><p>Personalize seu perfil e escolha como aparecer nas conversas do clube.</p></div>
+    <section class="perfil-cartao" aria-label="Resumo do perfil">
+      <div class="perfil-capa"></div>
+      <div class="perfil-resumo">
+        <img id="perfil-avatar" src="assets/user.jpg" alt="Foto de perfil">
+        <div class="perfil-identidade"><h2 id="perfil-nome">Leitor</h2><p id="perfil-usuario">@seuusuario</p><span id="perfil-assinante" class="perfil-selo">Membro do clube</span></div>
+        <button type="button" id="btnEditarPerfil" class="perfil-botao">Editar perfil</button>
+      </div>
+      <div class="perfil-detalhes"><span>E-MAIL</span><p id="perfil-email">—</p></div>
+      <div class="perfil-vitrine">
+        <div class="perfil-vitrine-item"><span>📚 LIVRO FAVORITO</span><strong id="perfil-livro-favorito">Ainda não escolhido</strong></div>
+        <div class="perfil-vitrine-item"><span>📖 LENDO ATUALMENTE</span><strong id="perfil-lendo">Ainda não informado</strong></div>
+        <div class="perfil-vitrine-item"><span>✨ GÊNEROS FAVORITOS</span><strong id="perfil-generos">Escolha seus favoritos</strong></div>
+      </div>
+      <p class="perfil-bio" id="perfil-bio">Conte um pouquinho sobre você e suas leituras...</p>
+    </section>
+    <section class="perfil-cartao perfil-edicao" id="secaoEditar" hidden>
+      <div class="perfil-secao-cabecalho"><h2>Editar perfil</h2><p>Seu nome e @usuário aparecem nas conversas.</p></div>
+      <form id="formPerfil">
+        <div class="perfil-foto-editar"><img id="perfil-avatar-editar" src="assets/user.jpg" alt="Prévia da foto"><div><label for="perfil-arquivo" class="perfil-botao perfil-botao-claro">Escolher foto dos arquivos</label><input id="perfil-arquivo" type="file" accept="image/png,image/jpeg,image/webp" hidden><p>JPG, PNG ou WebP, até 500 KB.</p></div></div>
+        <div class="perfil-campos"><div><label for="perfil-nome-input">Nome</label><input id="perfil-nome-input" maxlength="80" minlength="2" required><small id="avisoNome">Pode ser alterado a cada 7 dias.</small></div><div><label for="perfil-apelido">Nome de usuário *</label><div class="perfil-arroba"><span>@</span><input id="perfil-apelido" maxlength="24" minlength="3" required placeholder="seuusuario"></div><small id="avisoApelido">Obrigatório. Pode ser alterado a cada 30 dias.</small></div></div>
+        <div class="perfil-campos-literarios">
+          <div><label for="perfil-bio-input">Minha bio literária</label><textarea id="perfil-bio-input" maxlength="150" rows="3" placeholder="Uma frase sobre você e seu amor pelos livros..."></textarea><small>Até 150 caracteres</small></div>
+          <div><label for="perfil-livro-input">Meu livro favorito</label><input id="perfil-livro-input" maxlength="120" placeholder="Digite o título do seu favorito"><small>Provisório até a integração com a API de livros.</small></div>
+          <div><label for="perfil-lendo-input">Lendo atualmente</label><input id="perfil-lendo-input" maxlength="120" placeholder="O que você está lendo?"></div>
+          <div><label for="perfil-generos-input">Gêneros favoritos</label><select id="perfil-generos-input" multiple size="6"><option>Fantasia</option><option>Romance</option><option>Suspense e Mistério</option><option>Terror</option><option>Ficção Científica</option><option>Aventura</option><option>Drama</option><option>Clássicos</option><option>Distopia</option><option>Poesia</option><option>Contos</option><option>Biografia</option><option>Jovem Adulto</option><option>Policial</option><option>Não Ficção</option></select><small>Selecione até 3 opções (Ctrl + clique no computador).</small></div>
+        </div>
+        <p id="perfil-retorno" role="status"></p><div class="perfil-acoes"><button type="button" id="btnCancelarEdicao" class="perfil-botao perfil-botao-claro">Cancelar</button><button type="submit" class="perfil-botao">Salvar alterações</button></div>
+      </form>
+    </section>
+    <section class="perfil-cartao perfil-estante">
+      <div class="perfil-secao-cabecalho"><h2>Minha estante 📚</h2><p>Um cantinho para organizar suas leituras.</p></div>
+      <div class="perfil-estante-grid"><div><span>✓</span><h3>Livros lidos</h3><p>Seus livros concluídos aparecerão aqui.</p></div><div><span>📖</span><h3>Lendo</h3><p>Acompanhe suas leituras.</p></div><div><span>♡</span><h3>Quero ler</h3><p>Guarde suas próximas histórias.</p></div></div>
+      <button class="perfil-botao perfil-botao-claro" type="button" disabled title="Disponível após integrar a API de livros">+ Adicionar livro — em breve</button>
+    </section>
+    <section class="perfil-cartao perfil-estante">
+      <div class="perfil-secao-cabecalho"><h2>Minhas resenhas ✍️</h2><p>Suas opiniões sobre os livros terão um espaço especial aqui.</p></div>
+      <div class="perfil-vazio"><span>✦</span><h3>Sua próxima resenha começa aqui</h3><p>Depois que integrarmos a API de livros, você poderá escolher um título, avaliar e publicar sua resenha.</p></div>
+      <button class="perfil-botao perfil-botao-claro" type="button" disabled title="Disponível após integrar a API de livros">+ Escrever resenha — em breve</button>
+    </section>
+    <section class="perfil-cartao perfil-gerenciar"><h2>Gerenciar conta</h2><p>Cuide do acesso e das informações da sua conta.</p><div class="perfil-gerenciar-acoes"><button id="btnSairPerfil" type="button" class="perfil-botao perfil-botao-claro">Sair da conta</button><button id="btnExcluirConta" type="button" class="perfil-botao perfil-botao-perigo">Excluir minha conta</button></div></section>
+  </main>
+  <script src="perfil.js" defer></script>
+
+</body>
+</html>

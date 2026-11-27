@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faça o seu login</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="login-page">
+    <main class="login-card">
+        <div class="login-form-side">
+
+            <h1>
+                Faça o seu login
+                <span class="dot"></span>
+            </h1>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+                <div class="forgot-password">
+                    <a href="recuperar-senha.html">
+                        Esqueci minha senha
+                    </a>
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-entrar"
+                >
+                    Entrar
+                </button>
+
+                <div class="register-link">
+                    <a href="cadastro.html">
+                        Ainda não tenho uma conta
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="login-image-side">
+        </div>
+    </main>
+
+</body>
+
+</html>

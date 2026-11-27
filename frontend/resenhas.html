@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resenhas - Lontrinos Clube do Livro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span> LONTRINOS <small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao"><a href="index.html" data-page="index.html" class="">HOME</a><a href="sobre.html" data-page="sobre.html" class="">SOBRE NÓS</a><a href="livros.html" data-page="livros.html" class="">LIVROS</a><a href="resenhas.html" data-page="resenhas.html" class="ativo">RESENHAS</a><a href="clube.html" data-page="clube.html" class="">CLUBE</a><a href="chat.html" data-page="chat.html" class="">CHAT</a><a href="loja.html" data-page="loja.html" class="">LOJA</a><a href="planos.html" data-page="planos.html" class="">PLANOS</a><a href="perfil.html" data-page="perfil.html" class="">PERFIL</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar"><img src="assets/icon-busca.svg" alt="PESQUISAR"></button><a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho"><img src="assets/icon-carrinho.svg" alt="CARRINHO"></a><a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil"><img class="perfil" src="assets/user.jpg" alt="PERFIL"></a></div>
+</header>
+
+    <main class="resenhas-main">
+        <div class="container">
+
+            <div class="resenhas-header-section">
+                <h1>Resenhas da Comunidade</h1>
+                <p>Descubra o que os outros leitores estão a achar das leituras do mês e partilhe a sua própria perspetiva literária.</p>
+                <button class="btn-abrir-modal" id="btnAbrirModal">Escrever Resenha</button>
+            </div>
+
+            <div class="grid-resenhas" id="gridResenhas"><p class="estado-carregamento">Carregando resenhas...</p></div>
+
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalResenha">
+        <div class="modal-content">
+            <button class="btn-fechar-modal" id="btnFecharModal">&times;</button>
+            <h2>Escrever Nova Resenha</h2>
+            <form id="formResenha">
+                <div class="form-group">
+                    <label for="tituloLivro">Nome do Livro:</label>
+                    <input type="text" id="tituloLivro" placeholder="Ex: Dom Casmurro" required>
+                </div>
+                <div class="form-group">
+                    <label for="tituloResenha">Título da Resenha:</label>
+                    <input type="text" id="tituloResenha" placeholder="Ex: Uma obra-prima do realismo" required>
+                </div>
+                <div class="form-group">
+                    <label for="notaLivro">Sua Avaliação (1 a 5 estrelas):</label>
+                    <select id="notaLivro" required>
+                        <option value="5">★★★★★ (5/5)</option>
+                        <option value="4">★★★★☆ (4/5)</option>
+                        <option value="3">★★★☆☆ (3/5)</option>
+                        <option value="2">★★☆☆☆ (2/5)</option>
+                        <option value="1">★☆☆☆☆ (1/5)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="corpoResenha">O seu comentário:</label>
+                    <textarea id="corpoResenha" rows="4" placeholder="O que achou da história, personagens e escrita?" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar-resenha">Publicar Resenha</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo-area">
+                        <img src="assets/logoLontrino.png" alt="logo">
+                        <span>LONTRINOS</span>
+                    </div>
+                    <p>Um clube para quem acredita que cada livro é uma vida que ainda não vivemos.</p>
+                </div>
+                <div>
+                    <h4>NAVEGAÇÃO</h4>
+                <a href="index.html">Home</a>
+                <a href="chat.html">Chat</a>
+                <a href="loja.html">Loja</a>
+                <a href="clube.html">Clube</a>
+                <a href="planos.html">Planos</a>
+                <a href="resenhas.html" class="ativo">Resenhas</a>
+                <a href="sobre.html">Sobre Nós</a>
+                
+                <a href="perfil.html">Perfil</a>
+                </div>
+                <div>
+                    <h4>CLUBE</h4>
+                    <a href="#">Como funciona</a>
+                    <a href="#">Planos e preços</a>
+                    <a href="#">Leitura do mês</a>
+                </div>
+                <div>
+                    <h4>NEWSLETTER</h4>
+                    <p>Recomendações literárias toda semana, direto no seu e-mail.</p>
+                    <div class="newsletter-input-area">
+                        <input type="email" placeholder="seu@email.com">
+                        <button class="btn-enviar-seta">➔</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>© 2026 Lontrinos - Clube do Livro. Todos os direitos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

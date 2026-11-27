@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recuperar Senha - Lontrinos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recuperar-senha.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body class="recuperar-page">
+
+    <main class="recuperar-container">
+
+        <section class="recuperar-card">
+
+            <div class="recuperar-form">
+
+                <div class="recuperar-header">
+
+                    <div class="recuperar-logo">
+                        L
+                    </div>
+
+                    <h1>
+                        Recuperar senha
+                        <span class="dot"></span>
+                    </h1>
+
+                    <p>
+                        Não se preocupe! Digite seu e-mail
+                        e enviaremos as instruções para
+                        recuperar sua conta.
+                    </p>
+
+                </div>
+
+                <form id="recuperarForm">
+
+                    <div class="input-group">
+
+                        <label for="emailRecuperacao">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="emailRecuperacao"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn-recuperar"
+                    >
+                        Enviar instruções
+                    </button>
+
+                </form>
+
+                <div
+                    id="mensagemRecuperacao"
+                    class="mensagem-recuperacao"
+                    aria-live="polite"
+                ></div>
+
+                <div class="voltar-login">
+
+                    <span>Você lembrou sua senha?</span>
+
+                    <a href="login.html">
+                        Voltar para o login
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="recuperar-imagem">
+
+                <div class="imagem-conteudo">
+
+                    <h2>
+                        Continue sua
+                        história.
+                    </h2>
+
+                    <p>
+                        Seus livros, suas leituras
+                        e a comunidade Lontrinos
+                        esperam por você.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

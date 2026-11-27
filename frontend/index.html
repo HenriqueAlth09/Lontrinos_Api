@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lontrinos | Clube do Livro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+<a class="logo-area" href="index.html"><img src="assets/logoLontrino.png" alt="Logo Lontrinos"><span> LONTRINOS <small>CLUBE DO LIVRO</small></span></a>
+<nav class="menu-navegacao"><a href="index.html" data-page="index.html" class="ativo">HOME</a><a href="sobre.html" data-page="sobre.html" class="">SOBRE NÓS</a><a href="livros.html" data-page="livros.html" class="">LIVROS</a><a href="resenhas.html" data-page="resenhas.html" class="">RESENHAS</a><a href="login.html" data-page="clube.html" class="">CLUBE</a><a href="chat.html" data-page="chat.html" class="">CHAT</a><a href="loja.html" data-page="loja.html" class="">LOJA</a><a href="planos.html" data-page="planos.html" class="">PLANOS</a><a href="perfil.html" data-page="perfil.html" class="">PERFIL</a></nav>
+<div class="header-itens"><button class="header-icon" id="btnBusca" type="button" aria-label="Pesquisar" title="Pesquisar"><img src="assets/icon-busca.svg" alt="PESQUISAR"></button><a class="header-icon" href="carrinho.html" aria-label="Carrinho" title="Carrinho"><img src="assets/icon-carrinho.svg" alt="CARRINHO"></a><a class="header-icon" href="perfil.html" aria-label="Perfil" title="Perfil"><img class="perfil" src="assets/user.jpg" alt="PERFIL"></a></div>
+</header>
+
+    <main>
+
+        <section
+            class="hero"
+            id="inicio">
+
+            <div class="container">
+
+                <div class="hero-text">
+
+                    <h1>
+                        Aproveite o dia.
+                        <br>
+
+                        Aproveite uma boa
+                        <br>
+
+                        história.
+                    </h1>
+
+                    <p>
+                        Leia, compartilhe experiências e descubra
+                        novas histórias com o Clube do Livro Lontrinos.
+                    </p>
+
+                    <a
+                        href="login.html"
+                        class="btn">
+
+                        ENTRAR NO CLUBE
+
+                    </a>
+
+                </div>
+
+                <div class="hero-img">
+
+                    <img
+                        src="assets/logoLontrino.png"
+                        alt="Logo Lontrinos">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="livros"
+            id="livros">
+
+            <div class="container">
+
+                <div class="titulo">
+
+                    <h2>
+                        Livros em destaque
+                    </h2>
+
+                    <a href="loja.html">
+                        Ver todos
+                    </a>
+
+                </div>
+
+                <div class="cards-livros">
+
+                    <div class="card">
+
+                        <img
+                            src="assets/ainvisivelvidadeaddielarue.jpg"
+                            alt="Capa do livro A Invisível Vida de Addie Larue">
+
+                        <h3>
+                            A Invisível Vida de Addie Larue
+                        </h3>
+
+                        <p>
+                            V.E. Schwab
+                        </p>
+
+                        <button
+                            class="btn-ver-mais"
+                            data-livro="A Invisível Vida de Addie Larue"
+                            type="button">
+
+                            Ver mais
+
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img
+                            src="assets/horadaestrela.jpg"
+                            alt="Capa do livro A Hora da Estrela">
+
+                        <h3>
+                            A Hora da Estrela
+                        </h3>
+
+                        <p>
+                            Clarice Lispector
+                        </p>
+
+                        <button
+                            class="btn-ver-mais"
+                            data-livro="A Hora da Estrela"
+                            type="button">
+
+                            Ver mais
+
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img
+                            src="assets/memorias.jpg"
+                            alt="Capa do livro Memórias de Brás Cubas">
+
+                        <h3>
+                            Memórias de Brás Cubas
+                        </h3>
+
+                        <p>
+                            Machado de Assis
+                        </p>
+
+                        <button
+                            class="btn-ver-mais"
+                            data-livro="Memórias de Brás Cubas"
+                            type="button">
+
+                            Ver mais
+
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img
+                            src="assets/metamorfose.jpg"
+                            alt="Capa do livro A Metamorfose">
+
+                        <h3>
+                            A Metamorfose
+                        </h3>
+
+                        <p>
+                            Franz Kafka
+                        </p>
+
+                        <button
+                            class="btn-ver-mais"
+                            data-livro="A Metamorfose"
+                            type="button">
+
+                            Ver mais
+
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <img
+                            src="assets/relatosdeumgato.jpg"
+                            alt="Capa do livro Relatos de um Gato Viajante">
+
+                        <h3>
+                            Relatos de um Gato Viajante
+                        </h3>
+
+                        <p>
+                            Hiro Arikawa
+                        </p>
+
+                        <button
+                            class="btn-ver-mais"
+                            data-livro="Relatos de um Gato Viajante"
+                            type="button">
+
+                            Ver mais
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="resenhas"
+            id="resenhas">
+
+            <div class="container">
+
+                <h2>
+                    Resenhas da Comunidade
+                </h2>
+
+                <div class="cards-resenhas">
+
+                    <div class="resenha">
+
+                        <div class="usuario">
+
+                            <img
+                                src="assets/user.jpg"
+                                alt="Foto de perfil de Lara">
+
+                            <div>
+
+                                <h4>
+                                    Lara
+                                </h4>
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "Verity me prendeu do começo ao fim.
+                            Um dos melhores livros que já li."
+                        </p>
+
+                    </div>
+
+                    <div class="resenha">
+
+                        <div class="usuario">
+
+                            <img
+                                src="assets/user.jpg"
+                                alt="Foto de perfil de Rafael">
+
+                            <div>
+
+                                <h4>
+                                    Rafael
+                                </h4>
+
+                                <span>
+                                    ★★★★★
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "A Biblioteca da Meia-Noite mudou minha
+                            forma de enxergar algumas escolhas."
+                        </p>
+
+                    </div>
+
+                    <div class="resenha">
+
+                        <div class="usuario">
+
+                            <img
+                                src="assets/user.jpg"
+                                alt="Foto de perfil de Julia">
+
+                            <div>
+
+                                <h4>
+                                    Julia
+                                </h4>
+
+                                <span>
+                                    ★★★
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "O Morro dos Ventos Uivantes continua
+                            sendo um dos meus favoritos."
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="comunidade"
+            id="comunidade">
+
+            <div class="container">
+
+                <div class="comunidade-texto">
+
+                    <h2>
+                        Seja um Lontrino! 🌟
+                    </h2>
+
+                    <p>
+                        Descubra novas leituras, participe de
+                        encontros, compartilhe suas opiniões e
+                        conheça pessoas apaixonadas por livros.
+                    </p>
+
+                    <a
+                        href="login.html"
+                        class="btn">
+
+                        PARTICIPAR
+
+                    </a>
+
+                </div>
+
+                <div class="comunidade-img">
+
+                    <img
+                        src="assets/logoLontrino.png"
+                        alt="Logo do Clube Lontrinos">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer
+        id="contato">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <div class="logo-area">
+
+                        <a href="index.html">
+
+                            <img
+                                src="assets/logoLontrino.png"
+                                alt="Logo Lontrinos">
+
+                        </a>
+
+                        <span>
+                            LONTRINOS
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Um clube para apaixonados por literatura,
+                        leitura e boas histórias.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        NAVEGAÇÃO
+                    </h4
+
+            <nav>
+
+            <a href="index.html" class="ativo">
+                Home
+            </a>
+
+            <a href="chat.html">
+                Chat
+            </a>
+
+            <a href="loja.html">
+                Loja
+            </a>
+
+            <a href="clube.html">
+                Clube
+            </a>
+
+            <a href="planos.html">
+                Planos
+            </a>
+
+            <a href="resenhas.html">
+                Resenhas
+            </a>
+
+            <a href="sobre.html">
+                Sobre Nós
+            </a>
+
+            <a href="perfil.html">
+                Perfil
+            </a>
+
+        </nav>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        REDES SOCIAIS
+                    </h4>
+
+                    <a
+                        href="#"
+                        target="_blank">
+
+                        Instagram
+
+                    </a>
+
+                    <a
+                        href="#"
+                        target="_blank">
+
+                        TikTok
+
+                    </a>
+
+                    <a
+                        href="#"
+                        target="_blank">
+
+                        Facebook
+
+                    </a>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        NEWSLETTER
+                    </h4>
+
+                    <p>
+                        Receba novidades sobre livros e eventos.
+                    </p>
+
+                    <form
+                        id="newsletterForm">
+
+                        <input
+                            type="email"
+                            id="emailNewsletter"
+                            placeholder="Seu e-mail"
+                            autocomplete="email"
+                            required>
+
+                        <button
+                            type="submit"
+                            class="btn">
+
+                            ENVIAR
+
+                        </button>
+
+                    </form>
+
+                    <p
+                        id="mensagemNewsletter">
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                © 2026 Lontrinos -
+                Todos os direitos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
