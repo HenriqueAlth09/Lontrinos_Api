@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
 }
 
 model Usuario {
@@ -19,7 +19,7 @@ model Usuario {
   cpf       String  @unique
   email     String  @unique
   senha     String
-  foto      String? @db.LongText
+  foto      String? 
   bio       String?
   assinante Boolean @default(false)
 
