@@ -49,18 +49,32 @@ async function garantirCanaisLiterarios() {
     console.log(`Canais literários: ${generos.length} disponíveis (${criados} novos).`);
 }
 
-const PORT = Number(process.env.PORT || 3000);
+let PORT = Number(process.env.PORT || 3000);
 
-garantirCanaisLiterarios().then(() => servidor.listen(PORT, "0.0.0.0", () => {
-    console.log("========================================");
-    console.log("LONTRINOS BACKEND ATIVO");
-    console.log(`URL: http://localhost:${PORT}`);
-    console.log(`Arquivo iniciado: ${require("path").resolve(__filename)}`);
-    console.log("Socket.IO ativo");
-    console.log("Salas de chat: /salas e /api/salas");
-    console.log(`Teste: http://localhost:${PORT}/__health`);
-    console.log("========================================");
-})).catch(erro => {
+garantirCanaisLiterarios().then(() => {
+    // Tenta iniciar o servidor; se a porta estiver ocupada, tenta a porta seguinte automaticamente
+    servidor.listen(PORT, "0.0.0.0", () => {
+        console.log("========================================");
+        console.log("LONTRINOS BACKEND ATIVO");
+        console.log(`URL: http://localhost:${PORT}`);
+        console.log(`Arquivo iniciado: ${require("path").resolve(__filename)}`);
+        console.log("Socket.IO ativo");
+        console.log("Salas de chat: /salas e /api/salas");
+        console.log(`Teste: http://localhost:${PORT}/__health`);
+        console.log("========================================");
+    });
+
+    servidor.on("error", (err) => {
+        if (err.code === "EADDRINUSE") {
+            console.warn(`A porta ${PORT} está ocupada. Tentando a porta ${PORT + 1} automaticamente...`);
+            PORT += 1;
+            servidor.listen(PORT, "0.0.0.0");
+        } else {
+            console.error("Erro no servidor:", err);
+        }
+    });
+
+}).catch(erro => {
     console.error("Erro ao preparar os canais literários:", erro);
     process.exitCode = 1;
 });
