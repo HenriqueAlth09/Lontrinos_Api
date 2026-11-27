@@ -1,5 +1,5 @@
 (() => {
-  const API = "http://localhost:3000";
+  const API = "";
   const token = localStorage.getItem("tokenLontrinos");
   let usuario;
   try { usuario = JSON.parse(localStorage.getItem("usuarioLogado") || "null"); } catch {}
@@ -49,9 +49,17 @@
   $("perfil-arquivo").addEventListener("change", () => {
     const arquivo = $("perfil-arquivo").files?.[0];
     if (!arquivo) return;
-    if (!["image/png", "image/jpeg", "image/webp"].includes(arquivo.type) || arquivo.size > 500 * 1024) { $("perfil-retorno").textContent = "Escolha JPG, PNG ou WebP de até 500 KB."; return; }
+    if (!["image/png", "image/jpeg", "image/webp"].includes(arquivo.type) || arquivo.size > 2 * 1024 * 1024) {
+      $("perfil-retorno").textContent = "Escolha JPG, PNG ou WebP de até 2 MB.";
+      $("perfil-arquivo").value = "";
+      return;
+    }
     const leitor = new FileReader();
-    leitor.onload = () => { fotoNova = leitor.result; $("perfil-avatar-editar").src = fotoNova; $("perfil-retorno").textContent = "Foto selecionada. Salve para aplicar."; };
+    leitor.onload = () => {
+      fotoNova = leitor.result;
+      $("perfil-avatar-editar").src = fotoNova;
+      $("perfil-retorno").textContent = "Foto selecionada. Salve para aplicar.";
+    };
     leitor.readAsDataURL(arquivo);
   });
   $("formPerfil").addEventListener("submit", async e => {
@@ -67,6 +75,7 @@
       const atualizado = await requisicao("/api/leitores/perfil", { method: "PUT", body: JSON.stringify(dados) });
       usuario = atualizado;
       fotoNova = undefined;
+      $("perfil-arquivo").value = "";
       localStorage.setItem("usuarioLogado", JSON.stringify(atualizado));
       preencher(atualizado);
       $("perfil-retorno").textContent = "Perfil atualizado com sucesso!";
